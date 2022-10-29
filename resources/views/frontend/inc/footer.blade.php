@@ -1,54 +1,3 @@
-<!--<section class="bg-white border-top mt-auto">-->
-<!--    <div class="container">-->
-<!--        <div class="row no-gutters">-->
-<!--            <div class="col-lg-3 col-md-6">-->
-<!--                <a class="text-reset border-left text-center p-4 d-block" href="{{ route('sellerpolicy') }}">-->
-<!--                    <i class="la la-file-text la-3x text-primary mb-2"></i>-->
-<!--                    <h4 class="h6">{{ translate('Seller Policy') }}</h4>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="col-lg-3 col-md-6">-->
-<!--                <a class="text-reset border-left text-center p-4 d-block" href="{{ route('returnpolicy') }}">-->
-<!--                    <i class="la la-mail-reply la-3x text-primary mb-2"></i>-->
-<!--                    <h4 class="h6">{{ translate('Return Policy') }}</h4>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="col-lg-3 col-md-6">-->
-<!--                <a class="text-reset border-left text-center p-4 d-block" href="{{ route('supportpolicy') }}">-->
-<!--                    <i class="la la-support la-3x text-primary mb-2"></i>-->
-<!--                    <h4 class="h6">{{ translate('Support Policy') }}</h4>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="col-lg-3 col-md-6">-->
-<!--                <a class="text-reset border-left border-right text-center p-4 d-block" href="{{ route('privacypolicy') }}">-->
-<!--                    <i class="las la-exclamation-circle la-3x text-primary mb-2"></i>-->
-<!--                    <h4 class="h6">{{ translate('Privacy Policy') }}</h4>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--<div class="newsletter-wrap">-->
-<!--    <div class="container">-->
-<!--        <div class="row">-->
-<!--            <div class="col-xs-12">-->
-<!--                <div class="newsletter">-->
-<!--                    <form  method="POST" action="{{ route('subscribers.store') }}">-->
-<!--                        <div>-->
-<!--                            <h4><span>newsletter</span></h4>-->
-<!--                            @csrf-->
-<!--                            <input type="text" placeholder="{{ translate('Enter your email address') }}" class="input-text" title="Sign up for our newsletter" id="newsletter1" name="email"-->
-<!--                            method="POST" action="{{ route('subscribers.store') }}">-->
-<!--                            <button class="subscribe" title="Subscribe" type="submit"><span>-->
-<!--                            {{ translate('Subscribe') }}</span></button>-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <section class="footer">
      <div class="footer-middle">
         <div class="container-fluid">
@@ -78,7 +27,7 @@
                                 {{ translate('Subscribe') }}
                                 </button>
                             </form> -->
-                            
+
                              <ul class="list-inline my-3 my-md-0 social colored">
                         @if ( get_setting('facebook_link') !=  null )
                         <li class="list-inline-item">
@@ -106,14 +55,14 @@
                         </li>
                         @endif
                     </ul>
-                           
+
                             <button  onclick="contact_us()" class="btn call">
                             Contact Us
                             </button>
                         </div>
                     </div>
                 </div>
-               
+
                 <div class="col-lg-3 col-md-4">
                     <div class="text-md-left mt-4">
                         <h4 class="tit">
@@ -210,7 +159,7 @@
                             </li>
                             <li class="mb-2">
                                 <!-- <span class="d-block"> {{translate('Email')}}:</span> -->
-                                <span class="d-flex"><i class="fad fa-envelope-open-text"></i>
+                                <span class="d-flex"><i class="la la-envelope-open"></i>
                                     <a href="mailto:{{ get_setting('contact_email') }}" class="text-reset">{{ get_setting('contact_email')  }}</a>
                                 </span>
                             </li>
@@ -220,12 +169,12 @@
             </div>
         </div>
     </div>
-  </div> 
-    <div class="shopping_info">
+  </div>
+  <div class="shopping_info">
         <div class="container-fluid">
                  <div class="px-2 py-4 px-md-4 py-md-3">
                      <div class="row justify-content-center">
-                            <div class="col-md-4">	
+                            <div class="col-md-4">
                                 <div class="icon_box icon_box_style2">
                                     <div class="icon">
                                         <i class="fa fa-truck" aria-hidden="true"></i>
@@ -236,7 +185,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">	
+                            <div class="col-md-4">
                                 <div class="icon_box icon_box_style2">
                                     <div class="icon">
                                       <i class="fas fa-exchange"></i>
@@ -247,7 +196,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">	
+                            <div class="col-md-4">
                                 <div class="icon_box icon_box_style2">
                                     <div class="icon">
                                        <i class="far fa-user-headset"></i>
@@ -263,11 +212,8 @@
         </div>
     </div>
 </section>
-
-
-
 <!-- FOOTER -->
-<div class="modal fade" id="contact_us" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="contact_us" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-zoom" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -304,8 +250,8 @@
                                     <textarea class="form-control textarea-autogrow mb-3" placeholder="{{ translate('Your Message') }}" rows="3" name="message" required></textarea>
                                 </div>
                             </div>
-                        
-                 
+
+
                             <div class="row">
                                 <div class="col-md-2">
                                     <label>{{ translate('Phone')}}</label>
@@ -366,7 +312,7 @@
         <li><a href="#">Semi-Kattan Silk Dupatta</a></li>
         <li><a href="#">Banarasi Silk Dupatta</a></li>
     </ul>
-    
+
     <h5>Saree - Fabulous Indian Banarasi Silk Sarees Styles for Women</h5>
     <p>Banarasi Silk Sarees have been an integral part of every North Indian brides trousseau since time immemorial. Varanasi, being one of the oldest places in the world has had a pivotal role in producing the best Handloom Banarasi Sari and caters to the persistent demand for even international cutomers of Banarasi Saris Online US, Canada, Dubai,etc.
        Whenever there is a mention of ethnic bridal wear, this Handwoven Traditional Saree is the first attire that comes to our mind. Nowadays, with a plethora of options available in Handwoven Traditional Saris, with cutwork, or embroidered, or Tissue Sarees or even a Designer Banarasi Silk Saree Online, makes this Popular Banarasi Silk Saree an indispensable part of any bridal trousseau.
@@ -377,7 +323,7 @@
 @endif
 
 @if(Route::currentRouteName() =='search')
-  
+
 <div class="footer-last">
     <div class="container">
         @php $url=url()->full();
@@ -397,7 +343,7 @@
         $('#contact_us').modal('show');
     }
     </script>
-   
+
 
 <div class="aiz-mobile-bottom-nav d-xl-none fixed-bottom bg-white shadow-lg border-top">
     <div class="d-flex justify-content-around align-items-center">
@@ -460,5 +406,5 @@
 @endif
 <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
 <div class="get">
-  <a href="{{route('user.request_sample')}}"> Fabric Sample</a>
+  <a href="{{route('user.request_sample')}}"> Fabric Sample <i class="la la-arrow-right"></i></a>
 </div>

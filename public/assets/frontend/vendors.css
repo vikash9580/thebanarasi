@@ -97,7 +97,7 @@ p {
 	    margin-top: 0;
     margin-bottom: 1rem;
     font-family: 'Poppins';
-    
+
     text-align: justify;
     font-size: 14px;
     line-height: 26px;
@@ -2721,8 +2721,10 @@ fieldset:disabled a.btn {
 
 .text-left h1
 {
-       text-transform: capitalize;
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 35px;
+    text-transform: uppercase;
 }
 
 
@@ -2981,13 +2983,13 @@ color: #ffffff;
 
   .num
     {
-     
+
     text-transform: uppercase;
     color: #000;
     margin-top: 5px;
     font-family: 'Poppins';
     }
-    
+
     .wt{
             width: 50px;
     margin-top: 5px;
@@ -3894,7 +3896,7 @@ input[type=submit].btn-block {
 .input-group>.form-control:not(:last-child) {
 	    margin: 0;
     font-size: 14px;
-    height: 48px;
+    height: 45px;
     color: #666;
     padding: 0 20px;
     background: none;
@@ -3904,7 +3906,7 @@ input[type=submit].btn-block {
 }
 
 .nav1 {
-       background: #fdfdfd;
+    background: #fdfdfd;
     height: 58px;
     -webkit-box-shadow: 5px 8px 30px 0 rgb(31 35 37 / 8%);
     -moz-box-shadow: 5px 8px 30px 0 rgba(31, 35, 37, 0.08);
@@ -4025,7 +4027,7 @@ input[type=submit].btn-block {
 .features-block {
     background: transparent;
        margin-top: 14px;
-  
+
     border-radius: 3px;
 }
 
@@ -5036,7 +5038,7 @@ input[type=submit].btn-block {
 		position: absolute;
 		    height: auto;
 	}
-	
+
 	.navbar-expand-lg>.container,
 	.navbar-expand-lg>.container-fluid,
 	.navbar-expand-lg>.container-lg,
@@ -7813,9 +7815,8 @@ button.bg-dark:hover {
 .flex-row-reverse {
 	-ms-flex-direction: row-reverse!important;
 	flex-direction: row-reverse!important;
-	    padding: 15px;
-   
-    box-shadow: 1px 1px 20px 0px #dddddd80;
+	padding: 15px;
+    /* box-shadow: 1px 1px 20px 0px #dddddd80; */
 
 }
 
@@ -19555,7 +19556,7 @@ a.text-dark:hover {
 * A jQuery menu plugin
 * @version 3.0.5
 * @author Osman Nuri Okumus <onokumus@gmail.com> (https://github.com/onokumus)
-* @license: MIT 
+* @license: MIT
 */
 
 .metismenu .arrow {
@@ -21680,7 +21681,7 @@ select.selectpicker {
 /**
  * Minified by jsDelivr using clean-css v4.2.1.
  * Original file: /npm/daterangepicker@3.0.5/daterangepicker.css
- * 
+ *
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
 

@@ -34,6 +34,11 @@
     box-shadow: 0 0 13px 0 rgb(82 63 105 / 5%);
     margin-bottom: 10px;
 }
+
+.pt-user {
+    padding-top: 0px !important;
+}
+
 .cards {
     position: relative;
     display: -ms-flexbox;
@@ -80,28 +85,7 @@
 .cards .card-bodys p{
   margin-bottom: 5px !important;
 }
-.enqry-btn{
-    padding: 8px 20px !important;
-    border: none;
-    border-radius: 25px !important;
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    box-sizing: border-box;
-    line-height: 20px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background: #e1b049 !important;
-    color: #fff !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-}
-.absolute-top-wish {
-z-index:99999;
-}
+
 </style>
 @section('content')
 <link rel="stylesheet" href="{{ static_asset('assets/css/main.css') }}">
@@ -114,16 +98,16 @@ z-index:99999;
                         @php
                         $photos = explode(',',$detailedProduct->photos);
                         @endphp
-                        
+
                         <div class="imgBox">
                             <div class="absolute-top-wish">
                                 <a href="javascript:void(0)" onclick="addToWishList({{ $detailedProduct->id}})"  data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                                <i class="fad fa-heart"></i>
-                                </a> 
+                                <i class="la la la-heart-o"></i>
+                                </a>
                               </div>
                             <img src="{{ uploaded_asset($photos[0]) }}"  data-origin="{{ uploaded_asset($photos[0]) }}" id="show-img">
                         </div>
-                        
+
                        <div class="small-img">
                             <img src="../public/assets/img/online_icon_right@2x.png" class="icon-left" alt="" id="prev-img">
                             <div class="small-container">
@@ -133,7 +117,7 @@ z-index:99999;
                                     @endforeach
                                 </div>
                             </div>
-                            
+
                             <img src="../public/assets/img/online_icon_right@2x.png" class="icon-right" alt="" id="next-img">
                         </div>
                     </div>
@@ -184,24 +168,24 @@ z-index:99999;
                             <!--<div class="col-2">-->
                             <!--    <div class="opacity-90 mt-2">{{ translate('Price')}}:</div>-->
                             <!--</div>-->
-                            
+
                             <div class="col-4 hide">
                                 <div class="">
-                                    
+
                                     @if(Auth::check())
                                     @if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
-                                    
+
                                     <strong class="h3">
                                     {{ home_discounted_base_price_wholesale($detailedProduct->id) }}
                                     </strong>
-                                    
-                                    
+
+
                                     <span class="" style="color:green;">/
                                         @php
                                         $flash_deal_product_details = \App\FlashDeal::where('flash_deals.status', 1)->where('flash_deals.featured', 1)->where('flash_deal_products.product_id', $detailedProduct->id)->leftJoin('flash_deal_products', 'flash_deals.id', '=', 'flash_deal_products.flash_deal_id')->first();
-                                        
+
                                         @endphp
-                                        
+
                                         @if(!empty($flash_deal_product_details['discount']))
                                         @if($flash_deal_product_details['wholesale_discount_type']=='percent') {{ $flash_deal_product_details['wholesale_discount'] }}% Flash Sale Off @endif
                                         @if($flash_deal_product_details['wholesale_discount_type']=='amount') {{ $flash_deal_product_details['wholesale_discount'] }}Rs Flash Sale Off @endif
@@ -210,25 +194,25 @@ z-index:99999;
                                         @if($detailedProduct->wholesale_discount_type=='percent'){{$detailedProduct->wholesale_discount}}%-Off @endif
                                         @if($detailedProduct->wholesale_discount_type=='amount'){{$detailedProduct->wholesale_discount}}Rs-Off @endif
                                         @endif
-                                        
+
                                         @endif
                                     </span>
-                                    
-                                    
-                                    
+
+
+
                                     @else
-                                    
+
                                     <strong class="h3">
                                     {{ home_discounted_price($detailedProduct->id) }}
                                     </strong>
-                                    
-                                    
+
+
                                     <span class="opacity-90" style="color:green;">/
                                         @php
                                         $flash_deal_product_details = \App\FlashDeal::where('flash_deals.status', 1)->where('flash_deals.featured', 1)->where('flash_deal_products.product_id', $detailedProduct->id)->leftJoin('flash_deal_products', 'flash_deals.id', '=', 'flash_deal_products.flash_deal_id')->first();
-                                        
+
                                         @endphp
-                                        
+
                                         @if(!empty($flash_deal_product_details['discount']))
                                         @if($flash_deal_product_details['discount_type']=='percent') {{ $flash_deal_product_details['discount'] }}% Flash Sale Off @endif
                                         @if($flash_deal_product_details['discount_type']=='amount') {{ $flash_deal_product_details['discount'] }}Rs Flash Sale Off @endif
@@ -237,26 +221,26 @@ z-index:99999;
                                         @if($detailedProduct->discount_type=='percent'){{$detailedProduct->discount}}%-Off @endif
                                         @if($detailedProduct->discount_type=='amount'){{$detailedProduct->discount}}Rs-Off @endif
                                         @endif
-                                        
+
                                         @endif
                                     </span>
-                                    
+
                                     @endif
-                                    
-                                    
+
+
                                     @else
-                                    
+
                                     <strong class="h3 fw-600">
                                     {{ home_discounted_price($detailedProduct->id) }}
                                     </strong>
-                                    
-                                    
+
+
                                     <span class="opacity-90" style="color:green;">/
                                         @php
                                         $flash_deal_product_details = \App\FlashDeal::where('flash_deals.status', 1)->where('flash_deals.featured', 1)->where('flash_deal_products.product_id', $detailedProduct->id)->leftJoin('flash_deal_products', 'flash_deals.id', '=', 'flash_deal_products.flash_deal_id')->first();
-                                        
+
                                         @endphp
-                                        
+
                                         @if(!empty($flash_deal_product_details['discount']))
                                         @if($flash_deal_product_details['discount_type']=='percent') {{ $flash_deal_product_details['discount'] }}% Flash Sale Off @endif
                                         @if($flash_deal_product_details['discount_type']=='amount') {{ $flash_deal_product_details['discount'] }}Rs Flash Sale Off @endif
@@ -265,13 +249,13 @@ z-index:99999;
                                         @if($detailedProduct->discount_type=='percent'){{$detailedProduct->discount}}%-Off @endif
                                         @if($detailedProduct->discount_type=='amount'){{$detailedProduct->discount}}Rs-Off @endif
                                         @endif
-                                        
+
                                         @endif
                                     </span>
                                     @endif
                                 </div>
                             </div>
-                            
+
                             <div class="col-5">
                                 <div class="del">
                                     @if(Auth::check())
@@ -282,8 +266,8 @@ z-index:99999;
                                     @if($detailedProduct->unit != null)
                                     <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
                                     @endif
-                                    
-                                    
+
+
                                     @else
                                     <del>
                                     {{ home_price($detailedProduct->id) }}
@@ -291,11 +275,11 @@ z-index:99999;
                                     @if($detailedProduct->unit != null)
                                     <span>/{{ $detailedProduct->getTranslation('unit') }}</span>
                                     @endif
-                                    
-                                    
+
+
                                     @endif
                                     @else
-                                    
+
                                     <del>
                                     {{ home_price($detailedProduct->id) }}
                                     </del>
@@ -305,12 +289,12 @@ z-index:99999;
                                     @endif
                                 </div>
                             </div>
-                            
-                            
+
+
                             <!--<div class="col-2">-->
                             <!--    <div class="opacity-90">{{ translate('Discount Price')}}:</div>-->
                             <!--</div>-->
-                            
+
                         </div>
                         @else
                         <div class="row no-gutters mt-3">
@@ -431,23 +415,23 @@ z-index:99999;
                             <i class="far fa-shopping-cart"></i>
                             <span class="d-none d-md-inline-block"> {{ translate('Add to cart')}}</span>
                             </button>
-                            
+
                             <button type="button" class="btn btn-primary buy-now" onclick="buyNow()">
-                             <i class="fas fa-rupee-sign"></i> {{ translate('Buy Now')}}
+                             <i class="la la-inr"></i> {{ translate('Buy Now')}}
                             </button>
                             @else
-                            <button type="button" class="btn btn-soft-primary add-to-cart" onclick="showCheckoutModal()">
+                            <button type="button" class="btn add-to-cart" onclick="showCheckoutModal()">
                            <i class="far fa-shopping-cart"></i>
                             <span class="d-none d-md-inline-block"> {{ translate('Add to cart')}}</span>
                             </button>
-                            
-                            <button type="button" class="btn btn-primary buy-now" onclick="showCheckoutModal()">
-                              <i class="fas fa-rupee-sign"></i> {{ translate('Buy Now')}}
+
+                            <button type="button" class="btn buy-now" onclick="showCheckoutModal()">
+                              <i class="la la-inr"></i> {{ translate('Buy Now')}}
                             </button>
                             @endif
-                            
-                            
-                            <button type="button" class="btn btn-primary call-now"><a href="tel:+91-8177062481">
+
+
+                            <button type="button" class="btn call-now"><a href="tel:+91-8177062481">
                             <i class="far fa-phone-volume"></i> {{ translate('Call Now')}}</a>
                             </button>
                             @else
@@ -482,11 +466,11 @@ z-index:99999;
                         </div>
                         <hr>
                         <div class="mt-3">
-                            <button type="button" class="btn enqry-btn" data-toggle="modal" data-target="#enquirymdl"> 
-                             {{ translate(' Get Wholesale Rate')}} <i class="far fa-angle-double-right"></i>
+                            <button type="button" class="btn enqry-btn" data-toggle="modal" data-target="#enquirymdl">
+                             {{ translate(' Get Wholesale Rate')}} &nbsp; <i class="la la-arrow-right"></i>
                             </button>
                         </div>
-                        
+
                         @php
                         $refund_request_addon = \App\Addon::where('unique_identifier', 'refund_request')->first();
                         $refund_sticker = \App\BusinessSetting::where('type', 'refund_sticker')->first();
@@ -516,14 +500,14 @@ z-index:99999;
                                 <div class="aiz-share"></div>
                             </div>
                         </div>
-                        
+
                         <div class="row no-gutters mt-sm-3">
                            <div class="col-12">
                               <div id="accordion">
                                 <div class="cards">
                                     <a class="card-link" data-toggle="collapse"
                                        href="#app" aria-expanded="true" aria-controls="collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        
+
                                        <div class="card-headers">
                                           <h6 style="color: #333;">Download our App</h6>
                                           <i class="fa fa-angle-down icn-arrow"></i>
@@ -540,14 +524,14 @@ z-index:99999;
 </td>
 </tr>
 </tbody>
-</table> 
+</table>
                                        </div>
                                     </div>
                                  </div>
                                  <div class="cards">
                                     <a class="card-link" data-toggle="collapse"
                                        href="#description1" aria-expanded="true" aria-controls="collapseOne">
-                                        
+
                                        <div class="card-headers">
                                           <h6 style="color: #333;">Shipping Method & Custom Duty</h6>
                                           <i class="fa fa-angle-down icn-arrow"></i>
@@ -578,7 +562,7 @@ z-index:99999;
       <li>An order is eligible for<span> </span><span class="il">return</span><span> </span>within <strong>3 days</strong> from the date of delivery.</li>
       <li>Return / Cancellation is not accepted for orders with <strong>custom tailoring</strong> including fall &amp; edging services. </li>
       <li>
-         Customers can initiate a<span> </span><span class="il">return</span><span> </span>request on the following circumstances  
+         Customers can initiate a<span> </span><span class="il">return</span><span> </span>request on the following circumstances
          <table cellspacing="0" cellpadding="0" border="1" class="mt-3 mb-3">
             <colgroup>
                <col width="215">
@@ -624,7 +608,7 @@ z-index:99999;
             <li>An order is eligible for<span> </span><span class="il">return</span><span> </span>within 3 days from the date of delivery</li>
             <li>Return / Cancellation is not accepted<span> </span>for orders with custom tailoring including fall &amp; edging services. </li>
             <li>
-               Customers can initiate a<span> </span><span class="il">return</span><span> </span>request on the following circumstances  
+               Customers can initiate a<span> </span><span class="il">return</span><span> </span>request on the following circumstances
                <table cellspacing="0" cellpadding="0" border="1" class="mt-3 mb-3">
                   <colgroup>
                      <col width="215">
@@ -658,7 +642,7 @@ z-index:99999;
       </div>
    </div>
 </div>
-                      
+
                                        </div>
                                     </div>
                                  </div>
@@ -843,11 +827,11 @@ z-index:99999;
                                                 <!--</div>-->
                                                 @if(Auth::check())
                                                 @if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
-                                                
+
                                                 <div class="mt-2">
                                                     <span class="fs-17 fw-600 text-primary">{{ home_discounted_base_price_wholesale($top_product->id) }}</span>
                                                 </div>
-                                                
+
                                                 @else
                                                 <div class="mt-2">
                                                     <span class="fs-17 fw-600 text-primary">{{ home_discounted_base_price($top_product->id) }}</span>
@@ -1023,8 +1007,8 @@ z-index:99999;
                                 </div>
                             </div>
                         </div>
-                       
-                        
+
+
                         <div class="bg-white rounded shadow-sm">
                             <div class="border-bottom p-3">
                                 <h3 class="fs-16 fw-600 mb-0">
@@ -1048,48 +1032,48 @@ z-index:99999;
                                                 </a>
                                             </div>
                                             <div class="p-md-3 p-2 text-left">
-                                                
+
                                                 <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0">
                                                 <a href="{{ route('product', $related_product->slug) }}" class="d-block text-reset">{{ $related_product->getTranslation('name') }}</a>
                                                 </h3>
-                                                
+
                                                 <div class="rating">
                                                     <!--{{ renderStarRating($related_product->rating) }}-->
                                                 </div>
-                                                
+
                                                 <div class="info">
-                                                    
+
                                                     @if(Auth::check())
-                                                    
+
                                                     @if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
-                                                    
+
                                                     <span class="fw-700">{{ home_discounted_base_price_wholesale($related_product->id) }}</span>
-                                                    
+
                                                     @if(home_base_price_wholesale($related_product->id) != home_discounted_base_price_wholesale($related_product->id))
                                                     <del class="fw-600 text-primary mr-1">{{ home_base_price_wholesale($related_product->id) }}</del>
                                                     @endif
-                                                    
-                                                    
+
+
                                                     @else
-                                                    
+
                                                     <span class="fw-700">{{ home_discounted_base_price($related_product->id) }}</span>
                                                     @if(home_base_price($related_product->id) != home_discounted_base_price($related_product->id))
                                                     <del class="fw-600 text-primary mr-1">{{ home_base_price($related_product->id) }}</del>
                                                     @endif
-                                                    
+
                                                     @endif
                                                     @else
-                                                    
+
                                                     <span class="fw-700">{{ home_discounted_base_price($related_product->id) }}</span>
                                                     @if(home_base_price($related_product->id) != home_discounted_base_price($related_product->id))
                                                     <del class="fw-600 text-primary mr-1">{{ home_base_price($related_product->id) }}</del>
                                                     @endif
-                                                    
-                                                    
+
+
                                                     @endif
-                                                    
+
                                                 </div>
-                                                
+
                                                 @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)
                                                 <div class="rounded px-2 mt-2 bg-soft-primary border-soft-primary border">
                                                     {{ translate('Club Point') }}:
@@ -1126,48 +1110,48 @@ z-index:99999;
                                                 </a>
                                             </div>
                                             <div class="p-md-3 p-2 text-left">
-                                                
+
                                                 <h3 class="fw-600 fs-13 text-truncate-2 lh-1-4 mb-0">
                                                 <a href="{{ route('product', $top_product->slug) }}" class="d-block text-reset">{{ $top_product->getTranslation('name') }}</a>
                                                 </h3>
-                                                
+
                                                 <div class="rating">
                                                     <!--{{ renderStarRating($top_product->rating) }}-->
                                                 </div>
-                                                
+
                                                 <div class="info">
-                                                    
+
                                                     @if(Auth::check())
-                                                    
+
                                                     @if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
-                                                    
+
                                                     <span class="fw-700">{{ home_discounted_base_price_wholesale($top_product->id) }}</span>
-                                                    
+
                                                     @if(home_base_price_wholesale($top_product->id) != home_discounted_base_price_wholesale($top_product->id))
                                                     <del class="fw-600 text-primary mr-1">{{ home_base_price_wholesale($top_product->id) }}</del>
                                                     @endif
-                                                    
-                                                    
+
+
                                                     @else
-                                                    
+
                                                     <span class="fw-700">{{ home_discounted_base_price($top_product->id) }}</span>
                                                     @if(home_base_price($top_product->id) != home_discounted_base_price($top_product->id))
                                                     <del class="fw-600 text-primary mr-1">{{ home_base_price($top_product->id) }}</del>
                                                     @endif
-                                                    
+
                                                     @endif
                                                     @else
-                                                    
+
                                                     <span class="fw-700">{{ home_discounted_base_price($top_product->id) }}</span>
                                                     @if(home_base_price($top_product->id) != home_discounted_base_price($top_product->id))
                                                     <del class="fw-600 text-primary mr-1">{{ home_base_price($top_product->id) }}</del>
                                                     @endif
-                                                    
-                                                    
+
+
                                                     @endif
-                                                    
+
                                                 </div>
-                                                
+
                                                 @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated)
                                                 <div class="rounded px-2 mt-2 bg-soft-primary border-soft-primary border">
                                                     {{ translate('Club Point') }}:
@@ -1295,8 +1279,8 @@ z-index:99999;
                 </div>
             </div>
         </div>
-        
-        
+
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enquirymdl">
   Launch demo modal
@@ -1315,10 +1299,10 @@ z-index:99999;
           <form method="post" action="{{route('enquiry')}}">
               @csrf()
       <div class="modal-body">
-   
+
                    <div class="row">
                      <div class="col-md-12 col-xs-12">
-                    <div class="form-group">   
+                    <div class="form-group">
                         <label label="username">Name <span>*</span></label>
                         <input type="text" placeholder="Enter Your Name" class="form-control" name="name" required="">
                     </div>
@@ -1335,17 +1319,17 @@ z-index:99999;
                         <input type="number" placeholder="Quantity" Value="1" class="form-control" name="qntity">
                     </div>
                     </div>
-                    
+
                       <div class="col-md-12 col-xs-12">
                           <div class="form-group">
                         <label name="quantity">Remark</label>
                          <textarea class="form-control textarea-autogrow mb-3" placeholder="Your Message" rows="3" name="remark" required="" spellcheck="false"></textarea>
                     </div>
                     </div>
-                   
+
 
                     </div>
-                
+
       </div>
       <div class="modal-footer">
         <input type="hidden" value="{{$detailedProduct->id}}" name="product_id">
@@ -1385,9 +1369,9 @@ z-index:99999;
         @endif
         }
         </script>
-        
+
         <script src="{{ static_asset('assets/js/zoom-image.js') }}"></script>
-        
+
         <script type="text/javascript">
         if(window.innerWidth>768){
         $('.imgBox').imgZoom({
@@ -1397,12 +1381,12 @@ z-index:99999;
         origin: 'data-origin'
         });
         }
-        
+
        $(document).ready(function() {
   $('.show-small-img').click(function() {
     $('#show-img').attr('data-origin', $(this).attr('src'));
   });
 });
         </script>
-        
+
         @endsection

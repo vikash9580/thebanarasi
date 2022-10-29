@@ -137,7 +137,7 @@ $meta_description   = get_setting('meta_description');
                            </ul>
                         </div>
                      </div>
-                    
+
                      <div class="mb-3">
                         <div class="fs-15 fw-600 p-3 border-bottom">
                            {{ translate('Price range')}}
@@ -201,7 +201,7 @@ $meta_description   = get_setting('meta_description');
                            </div>
                         </div>
                      </div>
-                    
+
                      @foreach ($attributes as $key => $attribute)
                      @if (\App\Attribute::find($attribute['id']) != null)
                      <div class="rounded mb-3">
@@ -294,9 +294,7 @@ $meta_description   = get_setting('meta_description');
                @isset($subsubcategory_id)
                <input type="hidden" name="subsubcategory" value="{{ \App\SubSubCategory::find($subsubcategory_id)->slug }}">
                @endisset
-              
-                    
-               <div class="">
+
                   <div class="d-flex">
                      <div class="form-group w-200px d-md-block">
                         <label class="mb-0 opacity-50">{{ translate('Sort by')}}</label>
@@ -315,8 +313,6 @@ $meta_description   = get_setting('meta_description');
                            <option value="{{ $brand->slug }}" @isset($brand_id) @if ($brand_id == $brand->id) selected @endif @endisset>{{ $brand->getTranslation('name') }}</option>
                            @endforeach
                         </select>
-                                              
-                       
 
                      </div>
                      <div class="form-group ml-2 mr-0 w-200px d-none d-md-block">
@@ -336,14 +332,13 @@ $meta_description   = get_setting('meta_description');
                         </button>
                      </div>
                   </div>
-               </div>
-             
+
                <input type="hidden" name="min_price" value="">
                <input type="hidden" name="max_price" value="">
                <div class="scrolling-pagination">
                <div class="row gutters-5 row-cols-xxl-3 row-cols-xl-3 row-cols-lg-4 row-cols-md-3 row-cols-2 ">
                   @foreach ($products as $key => $product)
-                  <div class="col" style="padding:0;">
+                  <div class="col" style="padding:0; margin-bottom: 10px;">
                      <div class="aiz-card-box text-center">
                         <div class="position-relative">
                            <a href="{{ route('product', $product->slug) }}" class="d-block">
@@ -357,12 +352,12 @@ $meta_description   = get_setting('meta_description');
                            </a>
                            <div class="absolute-top-wish">
                               <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                              <i class="fa fa-heart"></i>
-                              </a> 
+                              <i class="la la la-heart-o"></i>
+                              </a>
                            </div>
                         </div>
                         <div class="p-md-3 p-2 text-center">
-                          
+
                            @if(Auth::check())
                            @if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
                            <h3 class="text-truncate-2 lh-1-4 mb-0 text-left">
@@ -444,8 +439,8 @@ $meta_description   = get_setting('meta_description');
                            @endif
                           @endif
                            @else
-                          
-                          
+
+
                            <h3 class="text-truncate-2 lh-1-4 mb-0 text-left">
                               <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{ $product->getTranslation('name') }}</a>
                            </h3>
@@ -500,9 +495,9 @@ $meta_description   = get_setting('meta_description');
                      {{ $products->links() }}
                     </div>
                </div>
-               
-                 
-              
+
+
+
             </div>
          </div>
       </form>

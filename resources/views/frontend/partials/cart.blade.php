@@ -2,13 +2,13 @@
      <!--<img alt="thumb" src="../public/assets/img/icon-cart.png">-->
      <i class="crt la la-shopping-bag la-2x"></i>
     <span class="flex-grow-1 ml-1">
-        <span class="crtt nav-box-text d-none d-xl-block">{{translate('Shopping Cart')}}</span>
+        <span class="crtt nav-box-text d-none d-xl-block">{{translate('Carts')}}</span>
         @if(isset(Auth::user()->id))
-            <p><span class="badge badge-primary badge-inline badge-pill">{{ App\Models\Cart::where('user_id',Auth::user()->id)->where('payment_status',0)->get()->count()}} Items</span></p>
+            <p><span class="badge cart-count badge-inline badge-pill">{{ App\Models\Cart::where('user_id',Auth::user()->id)->where('payment_status',0)->get()->count()}}</span></p>
         @else
-            <span class="badge badge-primary-1 badge-inline badge-pill">0</span>
+            <span class="badge badge-inline badge-pill"></span>
         @endif
-        
+
     </span>
 </a>
 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg p-0 stop-propagation">

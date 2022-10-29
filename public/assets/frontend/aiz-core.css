@@ -197,7 +197,7 @@ fixed-bottom 1030*/
     position: absolute;
     right: 0;
     top: 25px;
-    
+
 }
 
 
@@ -205,7 +205,6 @@ fixed-bottom 1030*/
     position: absolute;
     right: 18px;
     top: 18px;
-    z-index: 9999999;
 }
 
 
@@ -420,11 +419,11 @@ fixed-bottom 1030*/
 
 .bg-primary { background-color: var(--primary) !important; }
 
-.bg-soft-primary 
+.bg-soft-primary
    {
           background-color: rgb(222 162 51) !important;
         color: #fff !important;
-       
+
    }
 
 .bg-secondary { background-color: var(--secondary) !important; }
@@ -494,7 +493,7 @@ fixed-bottom 1030*/
 .border-dark {border-color: var(--dark) !important; }
 
 .border-soft-primary { border-color: var(--soft-primary) !important; }
-.border-soft-secondary 
+.border-soft-secondary
 {   transition: all 0.5s;
     transition: all 0.5s;
          background-color: rgb(255 255 255 / 55%);
@@ -3756,7 +3755,7 @@ input[type="number"] {
     text-transform: capitalize;
 }
 .aiz-side-nav-list .aiz-side-nav-icon {
-    
+
     display: -webkit-box;
     display: -ms-flexbox;
     font-size: 20px;
@@ -3875,7 +3874,7 @@ input[type="number"] {
     }
 }
 
-.paginate_button 
+.paginate_button
 {
     color:#fff;
 }
@@ -3905,7 +3904,7 @@ input[type="number"] {
 
 
 .flash-label {
-   
+
    background: #cd1b29;
     display: block;
     position: absolute;
@@ -4052,7 +4051,7 @@ select option{
 .footr
 {
     background: #2d3e4d;
- 
+
 }
 
 .footr p
@@ -4166,7 +4165,7 @@ select option{
 }
 [dir="rtl"] .aiz-steps li:not(:first-of-type):before {
     left: calc(50% + 20px);
-    right: auto; 
+    right: auto;
 }
 .aiz-steps .title {
     font-size: 15px;
@@ -4722,7 +4721,7 @@ select option{
     white-space: nowrap;
     margin-right: 0;
     vertical-align: bottom;
-    
+
 }
 [dir="rtl"] .bootstrap-select .dropdown-toggle .filter-option{
     float: right;
@@ -4973,14 +4972,14 @@ select option{
 {
        font-family: 'Poppins';
     font-size: 25px;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
 }
 
 .product-price strong
 {
        font-family: 'Poppins';
     font-size: 25px;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
 }
 
 .main-header
@@ -5619,7 +5618,7 @@ div.footable-loader > span.fooicon:after {
 }
 .aiz-table td,
 .aiz-table th {
-    
+
     border-top: 1px solid #eceff7;
 
 }
@@ -6167,7 +6166,7 @@ div.footable-loader > span.fooicon:after {
     display: block;
         display: block;
     height: fit-content !important;
-    
+
 }
 .aiz-carousel.gutters-5 {
     width: calc(100% + 10px);
@@ -6263,16 +6262,20 @@ div.footable-loader > span.fooicon:after {
     -webkit-transform: translateX(-50%);
 }
 .half-outside-arrow .slick-prev {
-        left: -10px;
-    top: 31%;
+    left: -10px;
+    box-shadow: 2px 1px 3px 1px #d5d2d2;
+    color: #000;
+    top: 40%;
     border-radius: 50%;
-    background: #e1b048;
+    background: #ffffff;
 }
 .half-outside-arrow .slick-next {
     right: -10px;
-    top: 31%;
+    box-shadow: 2px 1px 3px 1px #d5d2d2;
+    color: #000;
+    top: 40%;
     border-radius: 50%;
-    background: #e1b048;
+    background: #ffffff;
 }
 .caorusel-thumb .slick-arrow {
     top: auto;
@@ -6835,7 +6838,7 @@ ul.social.colored [class*="linkedin"] {
     right: 20px;
 }
 [dir="rtl"] .hover-category-menu .all-category::before {
-    left: 20px;    
+    left: 20px;
     right: auto;
 }
 
@@ -6928,8 +6931,8 @@ ul.social.colored [class*="linkedin"] {
 
 /*slider mobile auto height*/
 @media (max-width: 767.98px) {
-    
-    
+
+
 }
 
 
@@ -7082,8 +7085,8 @@ ul.social.colored [class*="linkedin"] {
         left: 0;
         z-index: 1;
     }
-    
-    
+
+
     .sidebar-sm .collapse-sidebar {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
@@ -7159,8 +7162,8 @@ ul.social.colored [class*="linkedin"] {
         left: auto;
         right: 0;
     }
-    
-    
+
+
     .sidebar-md.sidebar-auto .collapse-sidebar{
         width: auto;
         max-width: 100%;
@@ -7197,7 +7200,7 @@ ul.social.colored [class*="linkedin"] {
         left: 0;
         z-index: 1;
     }
-    
+
     .sidebar-lg .collapse-sidebar {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;

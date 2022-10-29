@@ -6,7 +6,8 @@
         @else
             <span class="badge badge-primary badge-inline badge-pill"  style="display:none;"></span>
         @endif
-        <span class="nav-box-text d-none d-xl-block">{{translate('Wishlist')}}</span>
+        <i class="crt la la la-heart-o la-2x"></i>
     </span>
 </a>
+
 

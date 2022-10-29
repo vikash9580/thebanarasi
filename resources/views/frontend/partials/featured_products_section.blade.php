@@ -1,4 +1,4 @@
-<section class="product mb-4">
+<section class="product">
    <div class="px-2 py-4 px-md-4 py-md-3">
       <!--<div class="d-flex mb-3 align-items-baseline border-bottom">-->
       <!--   <h3 class="h5 fw-700 mb-0">-->
@@ -21,7 +21,7 @@
                   </a>
                   <div class="absolute-top-wish">
                      <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})"  data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                        <i class="fad fa-heart"></i>
+                        <i class="la la la-heart-o"></i>
                   </div>
                   <!--<div class="absolute-top-right aiz-p-hov-icon">-->
                   <!--    <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">-->
@@ -54,7 +54,7 @@
                			@endif
                			@if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
                				<del class="text-primary mr-1 mr-1" >{{ home_base_price_wholesale($product->id) }}</del>
-               			@else  
+               			@else
                				@if(home_base_price($product->id) != home_discounted_base_price($product->id))
                					<del class="text-primary mr-1" >{{ home_base_price($product->id) }}</del>
                				@endif
@@ -63,36 +63,36 @@
                		@if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
                			@if($flash_deal_feature['wholesale_discount'])
                				<div class="new-label new-top">
-               					<p>@if($flash_deal_feature['wholesale_discount_type']=='percent') {{ $flash_deal_feature['wholesale_discount'] }}% Flash @endif</p> 
-               					<p>@if($flash_deal_feature['wholesale_discount_type']=='amount') {{ $flash_deal_feature['wholesale_discount'] }}Rs Flash @endif</p> 
+               					<p>@if($flash_deal_feature['wholesale_discount_type']=='percent') {{ $flash_deal_feature['wholesale_discount'] }}% Flash @endif</p>
+               					<p>@if($flash_deal_feature['wholesale_discount_type']=='amount') {{ $flash_deal_feature['wholesale_discount'] }}Rs Flash @endif</p>
                				</div>
                			@else
                				<div class="new-label new-top">
-               					<p>@if($product->wholesale_discount_type=='percent' && $product->wholesale_discount!=0) {{ $product->wholesale_discount }}% Off @endif</p> 
-               					<p>@if($product->wholesale_discount_type=='amount' && $product->wholesale_discount!=0) {{ $product->wholesale_discount }}Rs Off @endif</p> 
+               					<p>@if($product->wholesale_discount_type=='percent' && $product->wholesale_discount!=0) {{ $product->wholesale_discount }}% Off @endif</p>
+               					<p>@if($product->wholesale_discount_type=='amount' && $product->wholesale_discount!=0) {{ $product->wholesale_discount }}Rs Off @endif</p>
                				</div>
                			@endif
                		@else
                			@if($flash_deal_feature['discount'])
                				@if($flash_deal_feature['discount_type']=='percent')
-               					<div class="new-label new-top"> 
-               						<p> {{ $flash_deal_feature['discount'] }}% Flash</p> 
+               					<div class="new-label new-top">
+               						<p> {{ $flash_deal_feature['discount'] }}% Flash</p>
                					</div>
                				@endif
                				@if($flash_deal_feature['discount_type']=='amount')
-               					<div class="new-label new-top"> 
-               						<p> {{ $flash_deal_feature['discount'] }}Rs Flash</p> 
+               					<div class="new-label new-top">
+               						<p> {{ $flash_deal_feature['discount'] }}Rs Flash</p>
                					</div>
                				@endif
                			@else
                				@if($product->discount_type=='percent' && $product->discount!=0)
-               					<div class="new-label new-top"> 
-               						<p> {{ $product->discount }}% Off</p> 
+               					<div class="new-label new-top">
+               						<p> {{ $product->discount }}% Off</p>
                					</div>
                				@endif
                				@if($product->discount_type=='amount' && $product->discount!=0)
-               					<div class="new-label new-top"> 
-               						<p> {{ $product->discount }}Rs Off </p> 
+               					<div class="new-label new-top">
+               						<p> {{ $product->discount }}Rs Off </p>
                					</div>
                				@endif
                			@endif

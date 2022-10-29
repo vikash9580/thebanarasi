@@ -1,5 +1,5 @@
 @if (\App\BusinessSetting::where('type', 'best_selling')->first()->value == 1)
-<section class="product mb-4">
+<section class="product">
    <div class="px-2 py-4 px-md-4 py-md-3">
       <!--<div class="d-flex flex-wrap mb-3 align-items-baseline">-->
       <!--    <a href="javascript:void(0)" class="ml-auto cell">{{ translate('Top 20') }}</a>-->
@@ -20,8 +20,8 @@
                   </a>
                   <div class="absolute-top-wish">
                      <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})"  data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                     <i class="fad fa-heart"></i>
-                     </a> 
+                     <i class="la la la-heart-o"></i>
+                     </a>
                   </div>
                   <!--<div class="absolute-top-right aiz-p-hov-icon">-->
                   <!--    <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})" data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">-->
@@ -55,7 +55,7 @@
                      @endif
                      @if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
                      <del class=" text-primary mr-1" >{{ home_base_price_wholesale($product->id) }}</del>
-                     @else  
+                     @else
                      @if(home_base_price($product->id) != home_discounted_base_price($product->id))
                      <del class="text-primary mr-1" >{{ home_base_price($product->id) }}</del>
                      @endif

@@ -55,6 +55,7 @@
     @endif
     <link rel="stylesheet" href="{{ static_asset('assets/frontend/aiz-core.css') }}">
     <link rel="stylesheet" href="{{ static_asset('assets/frontend/custom-style.css') }}">
+    <link rel="stylesheet" href="{{ static_asset('assets/frontend/menu.css') }}">
 
     <script>
         var AIZ = AIZ || {};
@@ -190,7 +191,7 @@
                                                         <strong>Start With 6,7,8,9 and have 10 digits</strong>
                                                     </span>
                                                 @endif
-                                           
+
                                             </div>
 
                                             <input type="hidden" name="country_code" value="">
@@ -245,7 +246,7 @@
                                             </label>
                                         </div>
 
-                            
+
 
                             <div class="my-sm-3">
                                 <button type="submit" class="cell btn btn-primary btn-block">{{  translate('Login') }}</button>
@@ -253,7 +254,7 @@
                         </form>
 
                     </div>
-                  
+
                     <!--@if(\App\BusinessSetting::where('type', 'google_login')->first()->value == 1 || \App\BusinessSetting::where('type', 'facebook_login')->first()->value == 1 || \App\BusinessSetting::where('type', 'twitter_login')->first()->value == 1)-->
                     <!--    <div class="separator mb-3">-->
                     <!--        <span class="bg-white px-3 opacity-60">{{ translate('Or Login With')}}</span>-->
@@ -300,7 +301,8 @@
     <script src="{{ static_asset('assets/js/vendors.js') }}"></script>
     <script src="{{ static_asset('assets/js/aiz-core.js') }}"></script>
     <script src="{{ static_asset('assets/js/zoom-image.js') }}"></script>
-     <script src="{{ static_asset('assets/js/main.js') }}"></script>
+    <script src="{{ static_asset('assets/js/main.js') }}"></script>
+    <script src="{{ static_asset('assets/js/menu.js') }}"></script>
 
     @if (get_setting('facebook_chat') == 1)
         <script type="text/javascript">
@@ -422,12 +424,12 @@
             $.post('{{ route('cart.removeFromCart') }}', {_token: AIZ.data.csrf, key:key}, function(data){
                 updateNavCart();
                 $('#cart-summary').html(data);
-                  
+
                 $.post('{{ route('cart.updateCartSummary') }}', { _token:'{{ csrf_token() }}', key:key}, function(data){
                  $('#cart-summary-details').html(data);
                  });
-            
-                
+
+
                 $('#cart_items_sidenav').html(parseInt($('#cart_items_sidenav').html())-1);
                  $('.ajax-loader').css("visibility", "hidden");
                   AIZ.plugins.notify('success', 'Item has been removed from cart');
@@ -571,11 +573,11 @@
                 AIZ.plugins.notify('warning', 'Please choose all the options');
             }
         }
-        
+
          function showCheckoutModal(){
            $('#GuestCheckout').modal();
         }
-        
+
 
         function show_purchase_history_details(order_id)
         {
@@ -721,34 +723,33 @@
     <a href="https://api.whatsapp.com/send?phone=+918177062481" target="_blank">
      <img src="https://cdn2.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-whatsapp-circle-512.png">
     </a></div>
-    
+
     <style>
     @media only screen and (max-width: 600px)
     {
-        .whtsp {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 70px !important;
-    left: 5px;
-    border-radius: 50%;
-  
-    z-index: 100;
+    .whtsp {
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        bottom: 70px !important;
+        left: 20px;
+        border-radius: 50%;
+        z-index: 100;
 }
 
 .whtsp img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
     }
         .whtsp {
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 20px;
-    left: 5px;
-    border-radius: 50%;
-  
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        left: 30px;
+        border-radius: 50%;
+
     z-index: 100;
 }
 

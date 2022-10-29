@@ -19,9 +19,9 @@
             data-src="{{ uploaded_asset($slider_images[$key]) }}"
             alt="{{ env('APP_NAME')}} promo"
             @if(count($featured_categories) == 0)
-            height="620"
+            height=""
             @else
-            height="620"
+            height=""
             @endif
             onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';"
             >
@@ -31,199 +31,7 @@
       </div>
       @endif
    </div>
-   <div class="latest-blogs">
-      <!--<div class="container-fluid">-->
-      <!--   <div class="row">-->
-      <!--      <div class="col-md-4">-->
-      <!--         <div class="row">-->
-      <!--            <div class="col-md-12 ">-->
-      <!--               <article class="post">-->
-      <!--                  <div class="post-thumb-content">-->
-      <!--                     <figure class="post-thumb">-->
-      <!--                        <a href="/search?category=banarasi-silk-stoles"><img class="img-responsive" alt="thumb" src="../public/assets/img/stole.png"> </a>-->
-      <!--                     </figure>-->
-      <!--                     <div class="product_var_one_text">-->
-      <!--                        <h4 class="color_one">Outerwear</h4>-->
-      <!--                        <h2>Stole</h2>-->
-      <!--                        <h4>Collection</h4>-->
-      <!--                        <a href="/search?category=banarasi-silk-stoles" class="theme-btn-one">Shop Now</a>-->
-      <!--                     </div>-->
-      <!--                  </div>-->
-      <!--               </article>-->
-      <!--            </div>-->
-      <!--            <div class="col-md-12">-->
-      <!--               <article class="post">-->
-      <!--                  <div class="post-thumb-content">-->
-      <!--                     <figure class="post-thumb">-->
-      <!--                        <a href="/search?category=banarasi-silk-dupatta"> <img class="img-responsive" alt="thumb" src="../public/assets/img/dupatta.png"> </a>-->
-      <!--                     </figure>-->
-      <!--                     <div class="product_var_one_text">-->
-      <!--                        <h4 class="color_one">Outerwear</h4>-->
-      <!--                        <h2>Dupatta</h2>-->
-      <!--                        <h4>Collection</h4>-->
-      <!--                        <a href="/search?category=banarasi-silk-dupatta" class="theme-btn-one">Shop Now</a>-->
-      <!--                     </div>-->
-      <!--                  </div>-->
-      <!--               </article>-->
-      <!--            </div>-->
-      <!--         </div>-->
-      <!--      </div>-->
-            <!--/.col-md-12-->
-      <!--      <div class="col-md-4">-->
-      <!--         <article class="post">-->
-      <!--            <div class="post-thumb-content">-->
-      <!--               <figure class="post-thumb">-->
-      <!--                  <a href="/search?category=banarasi-silk-sarees"><img class="img-responsive" alt="thumb" src="../public/assets/img/saree.png"> </a>-->
-      <!--               </figure>-->
-      <!--               <div class="product_var_one_text product_var_one_text_center">-->
-      <!--                  <h4 class="color_one">Fashion</h4>-->
-      <!--                  <h2>Saree</h2>-->
-      <!--                  <h4>Collection</h4>-->
-      <!--                  <a href="/search?category=banarasi-silk-sarees" class="theme-btn-one">Shop Now</a>-->
-      <!--               </div>-->
-      <!--            </div>-->
-      <!--         </article>-->
-      <!--      </div>-->
-            <!--/.col-md-4-->
-      <!--      <div class="col-md-4">-->
-      <!--         <div class="row">-->
-      <!--            <div class="col-md-12 ">-->
-      <!--               <article class="post">-->
-      <!--                  <div class="post-thumb-content">-->
-      <!--                     <figure class="post-thumb">-->
-      <!--                        <a href="/search?category=pashmina-shawls"><img class="img-responsive" alt="thumb" src="../public/assets/img/parshmani-shawl.png"> </a>-->
-      <!--                     </figure>-->
-      <!--                     <div class="product_var_one_text">-->
-      <!--                        <h4 class="color_one">Outerwear</h4>-->
-      <!--                        <h2>Pashmina </h2>-->
-      <!--                        <h4>Shawls</h4>-->
-      <!--                        <a href="/search?category=pashmina-shawls" class="theme-btn-one">Shop Now</a>-->
-      <!--                     </div>-->
-      <!--                  </div>-->
-      <!--               </article>-->
-      <!--            </div>-->
-      <!--            <div class="col-md-12">-->
-      <!--               <article class="post">-->
-      <!--                  <div class="post-thumb-content">-->
-      <!--                     <figure class="post-thumb">-->
-      <!--                        <a href="/search?category=fabric"> <img class="img-responsive" alt="thumb" src="../public/assets/img/fabric.png"> </a>-->
-      <!--                     </figure>-->
-      <!--                     <div class="product_var_one_text">-->
-      <!--                        <h4 class="color_one">Outerwear</h4>-->
-      <!--                        <h2>Fabric</h2>-->
-      <!--                        <h4>Collection</h4>-->
-      <!--                        <a href="/search?category=fabric" class="theme-btn-one">Shop Now</a>-->
-      <!--                     </div>-->
-      <!--                  </div>-->
-      <!--               </article>-->
-      <!--            </div>-->
-      <!--         </div>-->
-      <!--      </div>-->
-            <!--/.c
-               <!--/.col-md-3-->
-      <!--   </div>-->
-         <!--/.row-->
-      <!--</div>-->
-      
-      
-      <div class="container-fluid">
-          <div class="row">
-             <div class="col-md-6">
-               <article class="post">
-                  <div class="post-thumb-content">
-                     <figure class="post-thumb promo-grid__container">
-                        <a href="/search?category=banarasi-silk-sarees"><img class="img-responsive" alt="thumb" src="../public/assets/img/saree.jpg"> </a>
-                     </figure>
-                     <div class="product_var_one_text product_var_one_text_center text-left">
-                        <h4>Designer Choice</h4>
-                        <h2>Saree</h2>
-                        <a href="/search?category=banarasi-silk-sarees" class="theme-btn-one">Shop Now</a>
-                     </div>
-                  </div>
-               </article>
-            </div>
-             <div class="col-md-6">
-               <article class="post">
-                  <div class="post-thumb-content">
-                     <figure class="post-thumb promo-grid__container">
-                        <a href="/search?category=Suit-c5zdg"><img class="img-responsive" alt="thumb" src="../public/assets/img/suit.jpg"> </a>
-                     </figure>
-                     <div class="product_var_one_text product_var_one_text_center text-right">
-                        <h4>Latest Collection</h4>
-                        <h2>Suits</h2>
-                        <a href="/search?category=Suit-c5zdg" class="theme-btn-one">Shop Now</a>
-                     </div>
-                  </div>
-               </article>
-            </div>
-          </div>
-            
-           <div class="row">
-               <div class="col-md-3 col-xs-6">
-               <article class="post">
-                  <div class="post-thumb-content">
-                     <figure class="post-thumb">
-                        <a href="/search?category=banarasi-silk-sarees"><img class="img-responsive" alt="thumb" src="../public/assets/img/pashmin_shwl.jpg"> </a>
-                     </figure>
-                     <div class="product_var_one_text product_var_one_text_center">
-                        <h4>Latest Collection</h4>
-                        <h2>Pashmina Shawls</h2>
-                       <a href="/search?category=pashmina-shawls" class="theme-btn-one">Shop Now</a>
-                     </div>
-                  </div>
-               </article>
-            </div>
-              <!--/.col-md-3-->
-               <div class="col-md-3 col-xs-6">
-               <article class="post">
-                  <div class="post-thumb-content">
-                     <figure class="post-thumb">
-                        <a href="/search?category=banarasi-silk-sarees"><img class="img-responsive" alt="thumb" src="../public/assets/img/stole_720.jpg"> </a>
-                     </figure>
-                     <div class="product_var_one_text product_var_one_text_center">
-                        <h4>Designer Choice</h4>
-                        <h2>Stole</h2>
-                        <a href="/search?category=banarasi-silk-stoles" class="theme-btn-one">Shop Now</a>
-                     </div>
-                  </div>
-               </article>
-            </div>
-             <!--/.col-md-3-->
-             <div class="col-md-3 col-xs-6">
-               <article class="post">
-                  <div class="post-thumb-content">
-                     <figure class="post-thumb">
-                        <a href="/search?category=banarasi-silk-sarees"><img class="img-responsive" alt="thumb" src="../public/assets/img/dupatta_1.jpg"> </a>
-                     </figure>
-                     <div class="product_var_one_text product_var_one_text_center">
-                        <h4>Latest Styles</h4>
-                        <h2>Dupatta</h2>
-                        <a href="/search?category=banarasi-silk-dupatta" class="theme-btn-one">Shop Now</a>
-                     </div>
-                  </div>
-               </article>
-            </div>
-             <!--/.col-md-3-->
-             <div class="col-md-3 col-xs-6">
-               <article class="post">
-                  <div class="post-thumb-content">
-                     <figure class="post-thumb">
-                        <a href="/search?category=fabric"><img class="img-responsive" alt="thumb" src="../public/assets/img/fabrics_720.jpg"> </a>
-                     </figure>
-                     <div class="product_var_one_text product_var_one_text_center">
-                        <h4>Latest Collection</h4>
-                        <h2>Fabric</h2>
-                        <a href="/search?category=fabric" class="theme-btn-one">Shop Now</a>
-                     </div>
-                  </div>
-               </article>
-            </div>
-            <!--/.col-md-3-->
-             <!--/.row-->
-          </div>
-      
-      <!--/.container-->
-   </div>
+
    <!--/.post-->
    @if($num_todays_deal > 0)
    <div class="col-lg-2 order-3 mt-3 mt-lg-0">
@@ -271,16 +79,16 @@
    </div>
    @endif
 </div>
-                       
+
 
      @php
          $flash_deal = \App\FlashDeal::where('status', 1)->where('featured', 1)->first();
          @endphp
 
   @if($flash_deal != null && strtotime(date('Y-m-d H:i:s')) >= $flash_deal->start_date && strtotime(date('Y-m-d H:i:s')) <= $flash_deal->end_date)
-  
-            
-            
+
+
+
 <section class="product">
    <div class="container-fluid">
          <div class="section-header text-center">
@@ -311,8 +119,8 @@
                            </a>
                            <div class="absolute-top-wish">
                               <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})"  data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                              <i class="fad fa-heart"></i>
-                              </a> 
+                              <i class="la la la-heart-o"></i>
+                              </a>
                            </div>
                         </div>
                         @if(Auth::check())
@@ -365,7 +173,7 @@
                            <div class="info">
                               @if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
                               <del class="fw-600  text-primary mr-1" >{{ home_base_price_wholesale($product->id) }}</del>
-                              @else  
+                              @else
                               @if(home_base_price($product->id) != home_discounted_base_price($product->id))
                               <del class="fw-600  text-primary mr-1" >{{ home_base_price($product->id) }}</del>
                               @endif
@@ -448,14 +256,9 @@
          @endif
    </div>
 </section>
-  
-
-
-  
 
 <section class="product">
    <div class="container-fluid">
-      <div class="mb-3">
          <div class="section-header text-center">
             <h2>Trending Products</h2>
          </div>
@@ -483,12 +286,12 @@
                                  </a>
                                  <div class="absolute-top-wish">
                                     <a href="javascript:void(0)" onclick="addToWishList({{ $product->id }})"  data-toggle="tooltip" data-title="{{ translate('Add to wishlist') }}" data-placement="left">
-                                    <i class="fad fa-heart"></i>
-                                    </a> 
+                                    <i class="la la la-heart-o"></i>
+                                    </a>
                                  </div>
                               </div>
-                             
-  
+
+
                               @if(Auth::check())
                               <div class="p-md-3 p-2 text-center">
                                  <h3 class="text-truncate-2 lh-1-4 mb-0">
@@ -509,7 +312,7 @@
                                     	@endif
                                     	@if(Auth::user()->is_wholesale_customer==1 && Auth::user()->validate_wholesale_customer==1)
                                     		<del class=" text-primary mr-1" >{{ home_base_price_wholesale($product->id) }}</del>
-                                    	@else  
+                                    	@else
                                     		@if(home_base_price($product->id) != home_discounted_base_price($product->id))
                                     			<del class="text-primary  mr-1" >{{ home_base_price($product->id) }}</del>
                                     		@endif
@@ -565,9 +368,9 @@
                                  @endif
                               </div>
                               @else
-                               
-  
-    
+
+
+
                               <div class="p-md-3 p-2 text-center">
                                  <h3 class="text-truncate-2 lh-1-4 mb-0">
                                     <a href="{{ route('product', $product->slug) }}" class="d-block text-reset">{{  $product->getTranslation('name')  }}</a>
@@ -631,20 +434,17 @@
             <div id="section_featured" class="tab-pane fade text-center"></div>
             <div id="section_best_selling" class="tab-pane fade text-center"></div>
          </div>
-      </div>
    </div>
-
-                                
 </section>
-{{-- Banner section 1 --}}
 
-{{--<div class="hide banner">
+{{-- Banner section 1 --}}
+<div class="hide banner">
    <div class="container-fluid">
       <div class="row">
          @if (get_setting('home_banner1_images') != null)
          @php $banner_1_imags = json_decode(get_setting('home_banner1_images')); @endphp
          @foreach ($banner_1_imags as $key => $value)
-         <div class="pdd col-xl col-md-6">
+         <div class="pdd col-md-4">
             <div class="mb-3 mb-lg-0">
                <a href="/search" class="d-block text-reset">
                <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($banner_1_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">
@@ -655,13 +455,10 @@
          @endif
       </div>
    </div>
-</div> --}}
-  
-
+</div>
 
 {{-- Category wise Products --}}
 <div id="section_home_categories"></div>
-
 
 <!-- Start Testimonials -->
 <link rel="stylesheet" href="{{ static_asset('assets/frontend/testimonial.min.css') }}">
@@ -707,7 +504,7 @@
                   </div>
                </div>
             </div>
-         
+
       </div>
    </div>
 </div>
@@ -841,8 +638,8 @@ $customer_products = \App\CustomerProduct::where('status', '1')->where('publishe
      $('#MyModal').modal('show');
    }
    });
-    
-    
+
+
 </script>
 <script>
    $(document).ready(function(){
@@ -864,7 +661,7 @@ $customer_products = \App\CustomerProduct::where('status', '1')->where('publishe
            $('#section_home_categories').html(data);
            AIZ.plugins.slickCarousel();
        });
-   
+
        @if (\App\BusinessSetting::where('type', 'vendor_system_activation')->first()->value == 1)
        $.post('{{ route('home.section.best_sellers') }}', {_token:'{{ csrf_token() }}'}, function(data){
            $('#section_best_sellers').html(data);
@@ -874,3 +671,4 @@ $customer_products = \App\CustomerProduct::where('status', '1')->where('publishe
    });
 </script>
 @endsection
+
