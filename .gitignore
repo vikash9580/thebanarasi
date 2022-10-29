@@ -7,7 +7,6 @@
 /public/uploads
 /storage/*.key
 /vendor
-/public
 /temp
 /.idea
 /.vscode
