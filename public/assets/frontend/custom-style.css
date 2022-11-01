@@ -13,6 +13,25 @@
     text-align: center;
 }
 
+.register
+{
+    padding: 25px 10px;
+    background: #fff;
+    box-shadow: 0px 0px 0px 5px rgb(255 255 255 / 40%), 0px 4px 20px rgb(0 0 0 / 33%);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+}
+
+.register h1
+{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    letter-spacing: 0.5px;
+}
+
 .bg-gray {
     background: #fdf9f154;
     position: relative;
@@ -1553,6 +1572,15 @@ header.dark {
     line-height: 26px;
     margin-bottom: 20px;
     font-size: 16px;;
+}
+
+.register {
+    padding: 25px 0px;
+    margin: 2.5rem 0;
+}
+
+.register h1 {
+    font-size: 20px;
 }
 
 .shop a {

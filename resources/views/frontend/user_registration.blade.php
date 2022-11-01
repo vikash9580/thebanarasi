@@ -2,18 +2,16 @@
 
 @section('content')
     <section class="gry-bg py-4">
-        <div class="register">
             <div class="container">
                 <div class="row">
                     <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 mx-auto">
-                        <div class="card">
+                        <div class="register">
                             <div class="text-center pt-4">
-                                <h1 class="h4 fw-600">
+                                <h1>
                                     {{ translate('Login')}}
                                 </h1>
                             </div>
                             <div class="px-4 py-3 py-lg-4">
-                                <div class="">
                                     <form id="reg-form" class="form-default" role="form" action="{{ route('register') }}" method="POST">
                                         @csrf
                                         <div class="form-group" style="display:none;">
@@ -33,7 +31,7 @@
                                                         <strong>Start With 6,7,8,9 and have 10 digits</strong>
                                                     </span>
                                                 @endif
-                                           
+
                                             </div>
 
                                             <input type="hidden" name="country_code" value="">
@@ -88,8 +86,8 @@
                                             </label>
                                         </div>
 
-                                        <div class="my-sm-3">
-                                            <button type="submit" class="cell btn btn-primary btn-block">{{  translate('Login To Account') }}</button>
+                                        <div class="my-sm-3 mt-3 mb-2">
+                                            <button type="submit" class="btn enqry-btn btn-block">{{  translate('Login To Account') }}</button>
                                         </div>
                                     </form>
                                     @if(\App\BusinessSetting::where('type', 'google_login')->first()->value == 1 || \App\BusinessSetting::where('type', 'facebook_login')->first()->value == 1 || \App\BusinessSetting::where('type', 'twitter_login')->first()->value == 1)
@@ -120,17 +118,15 @@
                                             @endif
                                         </ul>
                                     @endif
-                                </div>
+
                                 <!--<div class="text-center">-->
                                 <!--    <p class="text-muted mb-0">{{ translate('Already have an account?')}} <a href="{{ route('user.login') }}">{{ translate('Log In')}}</a></p>-->
                                 <!--</div>-->
                             </div>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+                   </div>
+               </div>
+           </div>
     </section>
 @endsection
 
