@@ -1411,7 +1411,7 @@ video {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     visibility: visible;
-    z-index: 1000;
+    z-index: 10001;
     top: 0;
   }
 
