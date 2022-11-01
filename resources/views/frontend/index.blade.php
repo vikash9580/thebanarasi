@@ -91,7 +91,7 @@
                     <a href="{{ route('products.category', $category->slug) }}"><img class="d-block mw-100 lazyload" src="{{ static_asset('assets/img/placeholder.gif') }}" data-src="{{uploaded_asset($category->banner)}}"></a>
                     <div class="p-md-3 p-2 text-center">
                         <p class="text-center"><span class="title"> {{$category->getTranslation('name')}}</span></p>
-                        <a href="{{ route('products.category', $category->slug) }}" class="button button--link-style">Shop Now</a>
+                        <a href="{{ route('products.category', $category->slug) }}" class="button button--link-style">Shop Now <i class="la la-arrow-right"></i></a>
                     </div>
                 </div>
             @endforeach
