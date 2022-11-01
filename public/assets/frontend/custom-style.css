@@ -25,7 +25,7 @@
     margin-bottom: 50px;
     font-family: 'Poppins';
     letter-spacing: 0.5px;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -34,6 +34,11 @@
     border-radius: 50%;
     transform: scale(1.07);
     object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.category p
+{
     margin-bottom: 10px;
 }
 
@@ -64,7 +69,7 @@
 }
 
 .button--link-style {
-    font-size: 16px;
+    font-size: 15px;
     border: none;
     border-bottom: 1px dotted;
     height: auto;
@@ -1073,8 +1078,8 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
 }
 
 .section-header h1 {
-    font-size: 25px;
-    text-transform: uppercase;
+    font-size: 26px;
+    text-transform: capitalize;
     font-weight: 600;
     color: #222;
     font-family: var(--primary-font);
@@ -1525,11 +1530,28 @@ header.dark {
 }
 
 .title {
+    font-size: 15px;
+}
+
+.section-header h1 {
+    font-size: 18px;
+}
+
+.category p {
+    margin-bottom: 5px;
+}
+
+.button--link-style {
     font-size: 14px;
+}
+
+.category img {
+    margin-top: 20px;
 }
 
 .section-category h2 {
     line-height: 26px;
+    margin-bottom: 20px;
     font-size: 16px;;
 }
 
@@ -1851,7 +1873,6 @@ header.dark:after
     color: #000;
     width: 30px;
     height: 30px !important;
-    border-radius: 50px;
     font-size: 15px;
     line-height: 30px;
 }
