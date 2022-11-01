@@ -388,7 +388,7 @@
                                 </div>
                                 <div class="col-9">
                                     <div class="product-quantity d-flex align-items-center">
-                                        <div class="row no-gutters align-items-center aiz-plus-minus mr-3" style="width: 130px;">
+                                        <div class="row no-gutters align-items-center aiz-plus-minus mr-3" style="width:110px;">
                                             <button class="btn col-auto btn-icon btn-sm btn-circle btn-light" type="button" data-type="minus" data-field="quantity" disabled="">
                                             <i class="las la-minus"></i>
                                             </button>
