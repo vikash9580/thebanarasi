@@ -1323,7 +1323,7 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
 .footer p
 {
     font-size: 14px;
-    text-align: left;
+    text-align: justify;
     color: #687188 ;
 
 }
