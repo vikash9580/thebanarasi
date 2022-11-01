@@ -6424,18 +6424,17 @@ a.badge-dark:focus {
 }
 
 button.close {
-   padding: 0;
-    background-color: #dea233;
+    padding: 0;
+    background-color: transparent;
     border: 0;
     font-size: 14px;
-    color: #fff;
-      line-height: 20px;
+    color: #000;
+    line-height: 20px;
     padding: 10px;
-    border-radius: 50px;
-    right: -5px;
-    top: -10px;
-    opacity: 1;
     position: absolute;
+    top: -2px;
+    right: 0;
+    opacity: 1;
 }
 
 a.close.disabled {

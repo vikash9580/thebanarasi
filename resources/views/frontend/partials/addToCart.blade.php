@@ -44,11 +44,11 @@
                 <h2 class="price">
                     {{  $product->getTranslation('name')  }}
                 </h2>
-  
+
                 @if(home_price_wholesale($product->id) != home_discounted_price_wholesale($product->id))
                     <div class="row no-gutters mt-3">
                         <div class="col-3">
-                            <div class="opacity-50 mt-2">{{ translate('Price')}}:</div>
+                            {{ translate('Price')}}:
                         </div>
                         <div class="col-9">
                             <div class="fs-20">
@@ -64,14 +64,14 @@
 
                     <div class="row no-gutters mt-2">
                         <div class="col-3">
-                            <div class="opacity-50">{{ translate('Discount Price')}}:</div>
+                            {{ translate('Discount Price')}}:
                         </div>
                         <div class="col-9">
-                            <div class="">
+                            <div class="price">
                                 <strong class="h2 fw-600 text-primary">
                                     {{ home_discounted_price_wholesale($product->id) }}
                                 </strong>
-                                
+
                                 @if($product->unit != null)
                                     <span class="opacity-70">/{{ $product->getTranslation('unit') }}</span>
                                 @endif
@@ -80,11 +80,11 @@
                     </div>
                 @else
                     <div class="row no-gutters mt-3">
-                        <div class="col-2">
-                            <div class="opacity-50">{{ translate('Price')}}:</div>
+                        <div class="col-3">
+                            {{ translate('Price')}}:
                         </div>
-                        <div class="col-10">
-                            <div class="">
+                        <div class="col-9">
+                            <div class="price">
                                 <strong class="h2 fw-600 text-primary">
                                     {{ home_discounted_price_wholesale($product->id) }}
                                 </strong>
@@ -96,10 +96,10 @@
 
                 @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated && $product->earn_point > 0)
                     <div class="row no-gutters mt-4">
-                        <div class="col-2">
-                            <div class="opacity-50">{{  translate('Club Point') }}:</div>
+                        <div class="col-3">
+                            {{  translate('Club Point') }}:
                         </div>
-                        <div class="col-10">
+                        <div class="col-9">
                             <div class="d-inline-block club-point bg-soft-base-1 border-light-base-1 border">
                                 <span class="strong-700">{{ $product->earn_point }}</span>
                             </div>
@@ -131,10 +131,10 @@
                             @foreach (json_decode($product->choice_options) as $key => $choice)
 
                                 <div class="row no-gutters">
-                                    <div class="col-2">
-                                        <div class="opacity-50 mt-2 ">{{ \App\Attribute::find($choice->attribute_id)->getTranslation('name') }}:</div>
+                                    <div class="col-3">
+                                        {{ \App\Attribute::find($choice->attribute_id)->getTranslation('name') }}:
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-9">
                                         <div class="aiz-radio-inline">
                                             @foreach ($choice->values as $key => $value)
                                             <label class="aiz-megabox pl-0 mr-2">
@@ -158,8 +158,8 @@
 
                         @if (count(json_decode($product->colors)) > 0)
                             <div class="row no-gutters">
-                                <div class="col-2">
-                                    <div class="opacity-50 mt-2">{{ translate('Color')}}:</div>
+                                <div class="col-3">
+                                    {{ translate('Color')}}:
                                 </div>
                                 <div class="col-10">
                                     <div class="aiz-radio-inline">
@@ -184,10 +184,10 @@
                         @endif
 
                         <div class="row no-gutters">
-                            <div class="col-2">
-                                <div class="opacity-50 mt-2">{{ translate('Quantity')}}:</div>
+                            <div class="col-3">
+                                {{ translate('Quantity')}}:
                             </div>
-                            <div class="col-10">
+                            <div class="col-9">
                                 <div class="product-quantity d-flex align-items-center">
                                     <div class="row no-gutters align-items-center aiz-plus-minus mr-3" style="width: 130px;">
                                         <button class="btn col-auto btn-icon btn-sm btn-circle btn-light" type="button" data-type="minus" data-field="quantity" disabled="">
@@ -207,10 +207,10 @@
                     @endif
 
                     <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
-                        <div class="col-2">
-                            <div class="opacity-50">{{ translate('Total Price')}}:</div>
+                        <div class="col-3">
+                            {{ translate('Total Price')}}:
                         </div>
-                        <div class="col-10">
+                        <div class="col-9">
                             <div class="product-price">
                                 <strong id="chosen_price" class="h4 fw-600 text-primary">
 
@@ -250,7 +250,7 @@
                 @if(home_price($product->id) != home_discounted_price($product->id))
                     <div class="row no-gutters mt-3">
                         <div class="col-3">
-                            <div class="opacity-50 mt-2">{{ translate('Price')}}:</div>
+                            {{ translate('Price')}}:
                         </div>
                         <div class="col-9">
                             <div class="fs-20">
@@ -265,31 +265,31 @@
                     </div>
 
                     <div class="row no-gutters mt-2">
-                        <div class="col-2">
-                            <div class="opacity-50">{{ translate('Discount Price')}}:</div>
+                        <div class="col-3">
+                            {{ translate('Discount Price')}}:
                         </div>
-                        <div class="col-10">
-                            <div class="">
+                        <div class="col-9">
+                            <div class="price">
                                 <strong class="h2 fw-600 text-primary">
                                     {{ home_discounted_price($product->id) }}
                                 </strong>
                                 @if($product->unit != null)
-                                    <span class="opacity-70">/{{ $product->getTranslation('unit') }}</span>
+                                    <span>/{{ $product->getTranslation('unit') }}</span>
                                 @endif
                             </div>
                         </div>
                     </div>
                 @else
                     <div class="row no-gutters mt-3">
-                        <div class="col-2">
-                            <div class="opacity-50">{{ translate('Price')}}:</div>
+                        <div class="col-3">
+                            {{ translate('Price')}}:
                         </div>
-                        <div class="col-10">
-                            <div class="">
+                        <div class="col-9">
+                            <div class="price">
                                 <strong class="h2 fw-600 text-primary">
                                     {{ home_discounted_price($product->id) }}
                                 </strong>
-                                <span class="opacity-70">/{{ $product->unit }}</span>
+                                <span>/{{ $product->unit }}</span>
                             </div>
                         </div>
                     </div>
@@ -298,7 +298,7 @@
                 @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated && $product->earn_point > 0)
                     <div class="row no-gutters mt-4">
                         <div class="col-2">
-                            <div class="opacity-50">{{  translate('Club Point') }}:</div>
+                            {{  translate('Club Point') }}:
                         </div>
                         <div class="col-10">
                             <div class="d-inline-block club-point bg-soft-base-1 border-light-base-1 border">
@@ -332,10 +332,10 @@
                             @foreach (json_decode($product->choice_options) as $key => $choice)
 
                                 <div class="row no-gutters">
-                                    <div class="col-2">
-                                        <div class="opacity-50 mt-2 ">{{ \App\Attribute::find($choice->attribute_id)->getTranslation('name') }}:</div>
+                                    <div class="col-3">
+                                        {{ \App\Attribute::find($choice->attribute_id)->getTranslation('name') }}:
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-9">
                                         <div class="aiz-radio-inline">
                                             @foreach ($choice->values as $key => $value)
                                             <label class="aiz-megabox pl-0 mr-2">
@@ -359,10 +359,10 @@
 
                         @if (count(json_decode($product->colors)) > 0)
                             <div class="row no-gutters">
-                                <div class="col-2">
-                                    <div class="opacity-50 mt-2">{{ translate('Color')}}:</div>
+                                <div class="col-3">
+                                   {{ translate('Color')}}:
                                 </div>
-                                <div class="col-10">
+                                <div class="col-9">
                                     <div class="aiz-radio-inline">
                                         @foreach (json_decode($product->colors) as $key => $color)
                                         <label class="aiz-megabox pl-0 mr-2" data-toggle="tooltip" data-title="{{ \App\Color::where('code', $color)->first()->name }}">
@@ -385,10 +385,10 @@
                         @endif
 
                         <div class="row no-gutters">
-                            <div class="col-2">
-                                <div class="opacity-50 mt-2">{{ translate('Quantity')}}:</div>
+                            <div class="col-3">
+                                {{ translate('Quantity')}}:
                             </div>
-                            <div class="col-10">
+                            <div class="col-9">
                                 <div class="product-quantity d-flex align-items-center">
                                     <div class="row no-gutters align-items-center aiz-plus-minus mr-3" style="width: 130px;">
                                         <button class="btn col-auto btn-icon btn-sm btn-circle btn-light" type="button" data-type="minus" data-field="quantity" disabled="">
@@ -408,10 +408,10 @@
                     @endif
 
                     <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
-                        <div class="col-2">
-                            <div class="opacity-50">{{ translate('Total Price')}}:</div>
+                        <div class="col-3">
+                            {{ translate('Total Price')}}:
                         </div>
-                        <div class="col-10">
+                        <div class="col-9">
                             <div class="product-price">
                                 <strong id="chosen_price" class="h4 fw-600 text-primary">
 
@@ -443,7 +443,7 @@
         </div>
         @endif
             @else
-        
+
           <div class="col-lg-6">
             <div class="text-left">
                 <h2 class="price">
@@ -453,7 +453,7 @@
                 @if(home_price($product->id) != home_discounted_price($product->id))
                     <div class="row no-gutters mt-3">
                         <div class="col-3">
-                            <div class="opacity-50 mt-2">{{ translate('Price')}}:</div>
+                            <div class="mt-2">{{ translate('Price')}}:</div>
                         </div>
                         <div class="col-9">
                             <div class="fs-20">
@@ -469,10 +469,10 @@
 
                     <div class="row no-gutters mt-2">
                         <div class="col-3">
-                            <div class="opacity-50">{{ translate('Discount Price')}}:</div>
+                            {{ translate('Discount Price')}}:
                         </div>
                         <div class="col-9">
-                            <div class="">
+                            <div class="price">
                                 <strong class="h2 fw-600 text-primary">
                                     {{ home_discounted_price($product->id) }}
                                 </strong>
@@ -485,10 +485,10 @@
                 @else
                     <div class="row no-gutters mt-3">
                         <div class="col-3">
-                            <div class="opacity-50">{{ translate('Price')}}:</div>
+                            {{ translate('Price')}}:
                         </div>
                         <div class="col-9">
-                            <div class="">
+                            <div class="price">
                                 <strong class="h2 fw-600 text-primary">
                                     {{ home_discounted_price($product->id) }}
                                 </strong>
@@ -501,7 +501,7 @@
                 @if (\App\Addon::where('unique_identifier', 'club_point')->first() != null && \App\Addon::where('unique_identifier', 'club_point')->first()->activated && $product->earn_point > 0)
                     <div class="row no-gutters mt-4">
                         <div class="col-4">
-                            <div class="opacity-50">{{  translate('Club Point') }}:</div>
+                            {{  translate('Club Point') }}:
                         </div>
                         <div class="col-9">
                             <div class="d-inline-block club-point bg-soft-base-1 border-light-base-1 border">
@@ -535,10 +535,10 @@
                             @foreach (json_decode($product->choice_options) as $key => $choice)
 
                                 <div class="row no-gutters">
-                                    <div class="col-2">
-                                        <div class="opacity-50 mt-2 ">{{ \App\Attribute::find($choice->attribute_id)->getTranslation('name') }}:</div>
+                                    <div class="col-3">
+                                        {{ \App\Attribute::find($choice->attribute_id)->getTranslation('name') }}:
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-9">
                                         <div class="aiz-radio-inline">
                                             @foreach ($choice->values as $key => $value)
                                             <label class="aiz-megabox pl-0 mr-2">
@@ -563,7 +563,7 @@
                         @if (count(json_decode($product->colors)) > 0)
                             <div class="row no-gutters">
                                 <div class="col-2">
-                                    <div class="opacity-50 mt-2">{{ translate('Color')}}:</div>
+                                    <div class="mt-2">{{ translate('Color')}}:</div>
                                 </div>
                                 <div class="col-10">
                                     <div class="aiz-radio-inline">
@@ -589,7 +589,7 @@
 
                         <div class="row no-gutters">
                             <div class="col-3">
-                                <div class="opacity-50 mt-2">{{ translate('Quantity')}}:</div>
+                                <div class="mt-2">{{ translate('Quantity')}}:</div>
                             </div>
                             <div class="col-9">
                                 <div class="product-quantity d-flex align-items-center">
@@ -602,7 +602,7 @@
                                             <i class="las la-plus"></i>
                                         </button>
                                     </div>
-                                    <div class="avialable-amount opacity-60">(<span id="available-quantity">{{ $qty }}</span> {{ translate('available')}})</div>
+                                    <div class="avialable-amount">(<span id="available-quantity">{{ $qty }}</span> {{ translate('available')}})</div>
                                 </div>
                             </div>
                         </div>
@@ -612,7 +612,7 @@
 
                     <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
                         <div class="col-3">
-                            <div class="opacity-50">{{ translate('Total Price')}}:</div>
+                            {{ translate('Total Price')}}:
                         </div>
                         <div class="col-9">
                             <div class="product-price">
@@ -651,7 +651,7 @@
 
             </div>
         </div>
-        @endif 
+        @endif
     </div>
 </div>
 

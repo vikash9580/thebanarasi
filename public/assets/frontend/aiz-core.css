@@ -517,7 +517,7 @@ fixed-bottom 1030*/
 .border-dotted { border-style: dotted !important; }
 .border-dashed { border-style: dashed !important; }
 
-.text-primary { color: red !important; }
+.text-primary { color:#d79918  !important; }
 .text-soft-primary { color: var(--soft-primary) !important; }
 .text-secondary { color: var(--secondary) !important; }
 .text-soft-secondary { color: var(--soft-secondary) !important; }
@@ -3993,11 +3993,11 @@ input[type="number"] {
 .dropdown-item {
     display: block;
     width: 100%;
-    padding: 0.5rem 1.5rem;
+    padding: 10px;
+    font-size: 0.875rem;
     clear: both;
     font-weight: 400;
-    color: #cacee3;
-    font-family: 'Poppins';
+    color: #212529;
     text-align: inherit;
     white-space: nowrap;
     background-color: transparent;
@@ -4006,8 +4006,8 @@ input[type="number"] {
 .dropdown-item.active,
 .dropdown-item:hover,
 .dropdown-item:active {
-        color: #fff !important;
-    background-color: #e1b048;
+        color: #000 !important;
+        background-color: rgba(162, 162, 162, 0.1);
 }
 /*card elements*/
 .card {
@@ -4288,14 +4288,14 @@ select option{
 .form-control:focus {
         border-color: #ddd;
     box-shadow: none;
-    color: #000;
+    color: rgb(37, 37, 37);
 }
 
 .form-control:-ms-input-placeholder {
-    color: #ddd;
+    color: rgb(37, 37, 37);
 }
 .form-control::placeholder {
-    color: #ddd;
+    color: rgb(37, 37, 37);
 }
 .form-control:disabled,
 .form-control[readonly] {
@@ -4483,8 +4483,12 @@ select option{
     opacity: 0;
 }
 .aiz-megabox .aiz-megabox-elem {
-    border: none;
-    background: #f5f5f5;
+    font-family: 'Poppins';
+    background: #fffefe;
+    border-radius: 30px;
+    font-size: 14px;
+    box-shadow: 0px 0px 2px 1px #dddddda1;
+    letter-spacing: 0.3px;
 }
 
 .aiz-megabox > input:checked ~ span .aiz-rounded-check:after,
@@ -4493,11 +4497,11 @@ select option{
     opacity: 1;
 }
 
-.aiz-megabox > input:checked ~ .aiz-megabox-elem,
+/* .aiz-megabox > input:checked ~ .aiz-megabox-elem,
 .aiz-megabox > input:checked ~ .aiz-megabox-elem {
   border-color: #007bff;
     box-shadow: 0px 0px 2px #007bff;
-}
+} */
 
 /*input group/ form group*/
 .input-group > .input-group-prepend > .form-control {
@@ -6217,20 +6221,24 @@ div.footable-loader > span.fooicon:after {
     box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.15) !important;
 }
 .aiz-carousel .slick-prev {
-       left: 0px;
-    background: transparent;
+    left: 0px;
+    background: #ffffffb8;
     top: 50%;
-    color: #fff;
+    border-top-right-radius: 30px;
+    color: #000;
+    border-bottom-right-radius: 30px;
 }
 .aiz-carousel .slick-disabled {
     display: none !important;
 }
 
 .aiz-carousel .slick-next {
-   background: transparent;
     right: 0px;
+    background: #ffffffb8;
     top: 50%;
-    color: #fff;
+    border-top-left-radius: 30px;
+    color: #000;
+    border-bottom-left-radius: 30px;
 }
 .aiz-carousel .slick-dots{
     list-style: none;
@@ -6354,8 +6362,8 @@ div.footable-loader > span.fooicon:after {
     font-size: 0.8em;
 }
 .avatar-sm {
-    width: 44px;
-    height: 44px;
+    width: 30px;
+    height:30px;
     font-size: 1.1em;
 }
 .avatar-md {

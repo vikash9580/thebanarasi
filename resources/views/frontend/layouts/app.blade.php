@@ -159,19 +159,17 @@
         </div>
     </div>
   <div class="modal fade" id="GuestCheckout">
-        <div class="modal-dialog modal-sm modal-dialog-zoom">
+        <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-zoom">
             <div class="modal-content">
-                    <!--<button type="button" class="close" data-dismiss="modal">-->
-                    <!--    <span aria-hidden="true"></span>-->
-                    <!--</button>-->
-                    <button type="button" class="close" data-dismiss="modal">×</button>
+                <button type="button" class="close absolute-top-right btn-icon close z-1" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="la-2x">&times;</span>
+                </button>
                 <div class="modal-body">
                     <div class="text-center">
                                 <h1 class="h4 fw-600">
                                     Login
                                 </h1>
                             </div>
-                    <div class="p-3">
                         <form class="form-default" role="form" action="{{ route('register') }}" method="POST">
                             @csrf
                              <div class="form-group" style="display:none;">
@@ -249,11 +247,9 @@
 
 
                             <div class="my-sm-3">
-                                <button type="submit" class="cell btn btn-primary btn-block">{{  translate('Login') }}</button>
+                                <button type="submit" class="btn enqry-btn">{{  translate('Login') }}</button>
                             </div>
                         </form>
-
-                    </div>
 
                     <!--@if(\App\BusinessSetting::where('type', 'google_login')->first()->value == 1 || \App\BusinessSetting::where('type', 'facebook_login')->first()->value == 1 || \App\BusinessSetting::where('type', 'twitter_login')->first()->value == 1)-->
                     <!--    <div class="separator mb-3">-->

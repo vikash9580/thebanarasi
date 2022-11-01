@@ -10,24 +10,22 @@
       @if (get_setting('home_slider_images') != null)
       <div class="aiz-carousel slide dots-inside-bottom mobile-img-auto-height" data-arrows="true" data-dots="true" data-autoplay="true" data-infinite="true">
          @php $slider_images = json_decode(get_setting('home_slider_images'), true);  @endphp
-         @foreach ($slider_images as $key => $value)
-         <div class="carousel-box">
-            <a href="{{ json_decode(get_setting('home_slider_links'), true)[$key] }}">
-            <img
-            class="d-block mw-100 lazyload img-fit shadow-sm"
-            src="{{ static_asset('assets/img/placeholder-rect.jpg') }}"
-            data-src="{{ uploaded_asset($slider_images[$key]) }}"
-            alt="{{ env('APP_NAME')}} promo"
-            @if(count($featured_categories) == 0)
-            height=""
-            @else
-            height=""
-            @endif
-            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder-rect.jpg') }}';"
-            >
-            </a>
-         </div>
-         @endforeach
+            @foreach ($slider_images as $key => $value)
+                <div class="carousel-box">
+                    <a href="{{ json_decode(get_setting('home_slider_links'), true)[$key] }}">
+                    <img class="d-block mw-100 lazyload"
+                    src="{{ static_asset('assets/img/placeholder.gif') }}" data-src="{{ uploaded_asset($slider_images[$key]) }}"
+                    alt="{{ env('APP_NAME')}} promo"
+                    @if(count($featured_categories) == 0)
+                    height="auto"
+                    @else
+                    height="auto"
+                    @endif
+                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.gif') }}';"
+                    >
+                    </a>
+                </div>
+            @endforeach
       </div>
       @endif
    </div>
@@ -52,11 +50,11 @@
                         <div class="col-lg">
                            <div class="img">
                               <img
-                                 class="lazyload img-fit h-140px h-lg-80px"
-                                 src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                 class="lazyload w-100"
+                                 src="{{ static_asset('assets/img/placeholder.gif') }}"
                                  data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                  alt="{{ $product->getTranslation('name') }}"
-                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
+                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.gif') }}';"
                                  >
                            </div>
                         </div>
@@ -79,6 +77,29 @@
    </div>
    @endif
 </div>
+
+@if (count($featured_categories) > 0)
+ <section class="category mb-4">
+    <div class="container-fluid">
+        <div class="px-2 py-4 px-md-4 py-md-3">
+        <div class="text-center section-category ">
+            <h2>Keep your closet up-to-date with our <span>product range</span></h2>
+        </div>
+         <div class="row justify-content-center">
+            @foreach ($featured_categories as $key => $category)
+                <div class="col-md-2 col-xs-6">
+                    <a href="{{ route('products.category', $category->slug) }}"><img class="d-block mw-100 lazyload" src="{{ static_asset('assets/img/placeholder.gif') }}" data-src="{{uploaded_asset($category->banner)}}"></a>
+                    <div class="p-md-3 p-2 text-center">
+                        <p class="text-center"><span class="title"> {{$category->getTranslation('name')}}</span></p>
+                        <a href="{{ route('products.category', $category->slug) }}" class="button button--link-style">Shop Now</a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+      </div>
+    </div>
+ </section>
+@endif
 
 
      @php
@@ -111,10 +132,10 @@
                            <a href="{{ route('product', $product->slug) }}" class="d-block">
                            <img
                               class="img-fit lazyload mx-auto"
-                              src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                              src="{{ static_asset('assets/img/placeholder.gif') }}"
                               data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                               alt="{{  $product->getTranslation('name')  }}"
-                              onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
+                              onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.gif') }}';"
                               >
                            </a>
                            <div class="absolute-top-wish">
@@ -257,10 +278,10 @@
    </div>
 </section>
 
-<section class="product">
+<section class="product bg-gray">
    <div class="container-fluid">
          <div class="section-header text-center">
-            <h2>Trending Products</h2>
+            <h1>Trending Products</h1>
          </div>
          <div class="nav nav-tabs products-tab clearfix">
             <a href="#new_arrivals" data-toggle="tab" class="active">{{ translate('New Arrivals')}}</a>
@@ -278,10 +299,10 @@
                                  <a href="{{ route('product', $product->slug) }}" class="d-block">
                                  <img
                                     class="img-fit lazyload mx-auto"
-                                    src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                    src="{{ static_asset('assets/img/placeholder.gif') }}"
                                     data-src="{{ uploaded_asset($product->thumbnail_img) }}"
                                     alt="{{  $product->getTranslation('name')  }}"
-                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
+                                    onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.gif') }}';"
                                     >
                                  </a>
                                  <div class="absolute-top-wish">
@@ -438,16 +459,16 @@
 </section>
 
 {{-- Banner section 1 --}}
-<div class="hide banner">
+<div class="banner">
    <div class="container-fluid">
       <div class="row">
          @if (get_setting('home_banner1_images') != null)
          @php $banner_1_imags = json_decode(get_setting('home_banner1_images')); @endphp
          @foreach ($banner_1_imags as $key => $value)
-         <div class="pdd col-md-4">
+         <div class="pdd col">
             <div class="mb-3 mb-lg-0">
                <a href="/search" class="d-block text-reset">
-               <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($banner_1_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">
+               <img src="{{ static_asset('assets/img/placeholder.gif') }}" data-src="{{ uploaded_asset($banner_1_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="w-100 lazyload">
                </a>
             </div>
          </div>
@@ -532,10 +553,10 @@ $customer_products = \App\CustomerProduct::where('status', '1')->where('publishe
                      <a href="{{ route('customer.product', $customer_product->slug) }}" class="d-block">
                      <img
                         class="img-fit lazyload mx-auto h-140px h-md-300px"
-                        src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                        src="{{ static_asset('assets/img/placeholder.gif') }}"
                         data-src="{{ uploaded_asset($customer_product->thumbnail_img) }}"
                         alt="{{ $customer_product->getTranslation('name') }}"
-                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';"
+                        onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.gif') }}';"
                         >
                      </a>
                      <div class="absolute-top-left pt-2 pl-2">
@@ -573,7 +594,7 @@ $customer_products = \App\CustomerProduct::where('status', '1')->where('publishe
          <div class="col-xl col-md-6">
             <div class="mb-3 mb-lg-0">
                <a href="{{ json_decode(get_setting('home_banner2_links'), true)[$key] }}" class="d-block text-reset">
-               <img src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset($banner_2_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">
+               <img src="{{ static_asset('assets/img/placeholder.gif') }}" data-src="{{ uploaded_asset($banner_2_imags[$key]) }}" alt="{{ env('APP_NAME') }} promo" class="img-fluid lazyload">
                </a>
             </div>
          </div>

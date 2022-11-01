@@ -347,10 +347,10 @@
 
 <div class="aiz-mobile-bottom-nav d-xl-none fixed-bottom bg-white shadow-lg border-top">
     <div class="d-flex justify-content-around align-items-center">
-        <a href="{{ route('home') }}" class="text-reset flex-grow-1 text-center py-3 border-right {{ areActiveRoutes(['home'],'bg-soft-primary')}}">
+        <a href="{{ route('home') }}" class="text-reset flex-grow-1 text-center border-right {{ areActiveRoutes(['home'],'bg-soft-primary')}}">
             <i class="las la-home la-2x"></i>
         </a>
-        <a href="{{ route('categories.all') }}" class="text-reset flex-grow-1 text-center py-3 border-right {{ areActiveRoutes(['categories.all'],'bg-soft-primary')}}">
+        <a href="{{ route('categories.all') }}" class="text-reset flex-grow-1 text-center border-right {{ areActiveRoutes(['categories.all'],'bg-soft-primary')}}">
             <span class="d-inline-block position-relative px-2">
                 <i class="las la-list-ul la-2x"></i>
             </span>
@@ -358,16 +358,23 @@
         <a href="{{ route('cart') }}" class="text-reset flex-grow-1 text-center py-2 border-right {{ areActiveRoutes(['cart'],'bg-soft-primary')}}">
       <span class="d-inline-block position-relative px-2">
       <i class="las la-shopping-cart la-2x"></i>
-     @if(isset(Auth::user()->id))
-      <span class="badge badge-circle badge-primary position-absolute absolute-top-right" id="cart_items_sidenav">{{ App\Models\Cart::where('user_id',Auth::user()->id)->get()->count()}}</span>
+       @if(isset(Auth::user()->id))
+        <span class="badge badge-circle badge-primary cart-count" id="cart_items_sidenav">{{ App\Models\Cart::where('user_id',Auth::user()->id)->get()->count()}}</span>
       @else
-      <span class="badge badge-circle badge-primary position-absolute absolute-top-right" id="cart_items_sidenav">0</span>
+         <span class="badge badge-circle badge-primary cart-count" id="cart_items_sidenav">0</span>
       @endif
       </span>
       </a>
+
+      <a href="{{ route('wishlists.index') }}" class="text-reset flex-grow-1 text-center border-right {{ areActiveRoutes(['categories.all'],'bg-soft-primary')}}">
+        <span class="d-inline-block position-relative px-2">
+            <i class="la la la-heart-o la-2x"></i>
+        </span>
+    </a>
+
         @if (Auth::check())
             @if(isAdmin())
-                <a href="{{ route('admin.dashboard') }}" class="text-reset flex-grow-1 text-center py-2">
+                <a href="{{ route('admin.dashboard') }}" class="text-reset flex-grow-1 text-center">
                     <span class="avatar avatar-sm d-block mx-auto">
                         @if(Auth::user()->photo != null)
                             <img src="{{ custom_asset(Auth::user()->avatar_original)}}">
@@ -377,7 +384,7 @@
                     </span>
                 </a>
             @else
-                <a href="javascript:void(0)" class="text-reset flex-grow-1 text-center py-2 mobile-side-nav-thumb" data-toggle="class-toggle" data-target=".aiz-mobile-side-nav">
+                <a href="javascript:void(0)" class="text-reset flex-grow-1 text-center mobile-side-nav-thumb" data-toggle="class-toggle" data-target=".aiz-mobile-side-nav">
                     <span class="avatar avatar-sm d-block mx-auto">
                         @if(Auth::user()->photo != null)
                             <img src="{{ custom_asset(Auth::user()->avatar_original)}}">

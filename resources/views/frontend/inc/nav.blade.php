@@ -133,22 +133,39 @@
 
           <div class="col-md-4 pt-user hide">
              <ul>
-             @auth
-             @if(isAdmin())
-              <li>
-                <a href="{{ route('admin.dashboard') }}" class="nav-box-text"> <i class="crt la la-user la-2x"></i> <span class="crtt">{{ translate('My Panel')}}</span></a>
-             </li>
-             @else
-             <li>
-                <a href="{{ route('dashboard') }}" class="nav-box-text"> <i class="crt la la-user la-2x"></i> <span class="crtt">{{ translate('My Panel')}}</span></a>
-             </li>
+
+                @if (Auth::check())
+                <li><div class="dropdown">
+                    <button class="user-new dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <i class="crt la la-user la-2x"></i> {{Auth::user()->name}}
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                            <!-- item-->
+                            <li class="d-block"><a href="{{ route('dashboard') }}" class="dropdown-item notify-item"><i class="la la-user"></i> <span>My Panel</span></a></li>
+
+                            <!-- item-->
+                            <li class="d-block"><a href="{{ route('purchase_history.index') }}" class="dropdown-item notify-item"><i class="la la-history"></i> <span>Order History</span></a></li>
+
+                            <!-- item-->
+                            <li class="d-block"><a href="{{ route('wishlists.index') }}" class="dropdown-item notify-item"><i class="la la la-heart-o"></i> <span>My Wishlist</span></a></li>
+
+                            <!-- item-->
+                            <li class="d-block"><a href="{{ route('orders.track') }}" class="dropdown-item notify-item"><i class="la la-truck"></i> <span>Track Order</span></a></li>
+
+                            <!-- item-->
+                            <li class="d-block"><a href="{{ route('logout') }}" class="dropdown-item notify-item"><i class="la la-sign-in"></i> <span>Logout</span></a></li>
+                        </ul>
+                </div>
+
+            </li>
+                @else
+                <li class="mb-2">
+                    <a href="{{ route('user.registration') }}">
+                        <i class="crt la la-user la-2x"></i> <span class="crtt">Login/Register</span>
+                    </a>
+                </li>
              @endif
-             <!--   <a href="{{ route('logout') }}" class="py-2 d-inline-block"> <i class="fas fa-sign-in-alt"></i>{{ translate('Logout')}}</a>-->
-             @else
-             <li>
-                <a href="{{ route('user.registration') }}" class="nav-box-text"> <i class="crt la la-user la-2x"></i><span class="crtt">{{ translate('Login/Register')}}</span></a>
-             </li>
-             @endauth
 
              <li class="align-self-stretch" data-hover="dropdown">
                  <div id="wishlist">
@@ -179,6 +196,8 @@
              </li>
              @endif
              </ul>
+
+
           </div>
        </div>
     </div>
